@@ -1,0 +1,200 @@
+\documentclass[a4paper,10pt]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec}                     %for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} %other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo}                %better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular}                 %for Grades
+\usepackage{titlesec}                     %custom \section
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+%CV Sections inspired by:
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+
+%\hyphenation{im-pre-se}
+
+%--------------------------------BEGIN DOCUMENT---------------------------------
+
+\begin{document}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%------------------------------------TITLE--------------------------------------
+
+\par
+{\centering
+    {\Huge \textsc{Eduardo Almeida dos Santos}
+}\bigskip\par}
+
+%-----------------------------------SECTIONS------------------------------------
+
+%Section: Personal Data
+\section{Contact Information}
+
+\begin{tabular}{rl}
+    %\textsc{Date of birth:}
+    %& 13/02/1988 \\
+
+    %\textsc{Address:}
+    %& Rua Cascavel 3161, Bloco Lemans, Apt. 13, Curitiba-PR, Brasil \\
+
+    \textsc{Phone:}
+    & +55 41 99960-3141 \\
+
+    \textsc{email:}
+    & \href{mailto:durdo.one@gmail.com}{durdo.one@gmail.com}
+\end{tabular}
+
+%-------------------------------------------------------------------------------
+
+\section{Professional Summary}
+    Skilled Software Developer and problem solver with a zest for a challenging
+    work environment and eager to expand my knowledge in the technologic field.
+    Highly flexible in adjusting work pace to meet evolving client needs and
+    capable of working directly with clients providing technical support.
+
+%-------------------------------------------------------------------------------
+
+\section{Work Experience}
+    \begin{tabular}{r|p{11cm}}
+        \emph{Current}               & Development Analyst at \textsc
+                                     {Unify Enterprise Communications},
+                                     Curitiba \\
+
+        \textsc{September 2015}      &\emph
+                                     {Integrated communications solutions} \\
+                                     &\footnotesize
+                                     {
+                                         Serves as a key member of software
+                                         development in the SBC team. Provides
+                                         especification, documentation,
+                                         implemention and maintenance of
+                                         solutions for telecommunication (VOIP)
+                                         products. Maintainer of RTPProxy
+                                         component wich is responsible for media
+                                         establishment, stream security, quality
+                                         of service, among other functionalities.
+                                         Experienced in network traffic analysis
+                                         and capable of providing solutions for
+                                         any problem that might occur. Mostly
+                                         working with backend but also regular
+                                         contributor for frontend and plataform
+                                         develoment.
+                                     } \\
+                                     \multicolumn{2}{c}{} \\
+
+        \emph{\textsc{July 2015}}    & Intern/technical specialist at \textsc
+                                     {Agres Sistemas Eletrônicos Ltda},
+                                     Curitiba \\
+
+        \textsc{January 2014}        &\emph
+                                     {Automation of farm machinery} \\
+                                     &\footnotesize
+                                     {
+                                         Worked in the company's core product
+                                         providing bug fixes, feature
+                                         development and writting device drivers
+                                         to embedded systems. Studied the
+                                         possibility to port the product from a
+                                         real time operating system running in
+                                         a ARM Cortex-M3 to a Linux/Android OS
+                                         in a hardware based in the iMx53
+                                         develelopment kit. Plus, started
+                                         developing the stack ISOBUS (ISO11783).
+                                     } \\
+                                     \multicolumn{2}{c}{} \\
+
+        \emph{\textsc{January 2012}} & Intern at \textsc
+                                     {IBL Innovative Berlin Laser GmbH},
+                                     Berlin \\
+
+        \textsc{August 2011}         &\emph
+                                     {Solid-state laser for industrial
+                                        and scientific applications} \\
+                                     &\footnotesize
+                                     {
+                                         Developed applications to test, control
+                                         and collect data from industrial laser
+                                         machines. Using high level languages
+                                         (C\#, LabView) developed software that
+                                         automated tests and generated diagnosis
+                                         of Laser machines in the company's lab.
+                                     } \\
+                                     \multicolumn{2}{c}{} \\
+    \end{tabular}
+
+%-------------------------------------------------------------------------------
+
+%Section: Education
+\section{Education}
+    \begin{tabular}{rl}
+        \textsc{April} 2015 & Bachelor's Degree in: \\
+                            &\textsc
+                            {Electrical Engineering -
+                                Electronics and Telecommunication}, \\
+
+                            &\textbf
+                            {Universidade Tecnológica
+                                Federal do Paraná},
+                            Curitiba \\
+
+        \textsc{2011}       & Exchange Year at \textbf
+                            {Beuth Hochschule für Technik Berlin},
+                            Berlin \\ \\
+    \end{tabular}
+
+%-------------------------------------------------------------------------------
+
+%Section: Languages
+\section{Languages}
+    \begin{tabular}{rl}
+        \textsc{Portuguese:} &Native\\
+        \textsc{English:}    &Fluent\\
+        \textsc{German:}     &Basic\\
+    \end{tabular}
+
+\section{Skills}
+    \begin{tabular}{rp{9cm}}
+        Basic Knowledge:        & \textsc {php, javascript, css, html, java,
+                                pearl, C\#, assembly, VBA, automotive communication
+                                protocols (ISOBUS, CanOpen, EtherCat), Android
+                                OS,} {\fb \LaTeX}\setmainfont
+                                [SmallCapsFont=Fontin-SmallCaps.otf]
+                                {Fontin.otf}. \\ \\
+
+        Intermediate Knowledge: & \textsc{Microsoft Office, Shell script, Python,
+                                MatLab, LabView, various internet protocols,
+                                network programming.} \\ \\
+
+        Advanced Knowledge:     & \textsc{GNU/Linux, Agile, C, C++, git,
+                                networking, network media establishment (SIP,
+                                SDP, ICE, STUN, RTP, RTCP).}
+    \end{tabular}
+
+\section{Interests and Activities}
+    GNU/Linux, Vim, Technology, Open-Source, Programming; \\
+    Artificial intelligence, Data structures, Algorithms, Optmizations; \\
+    Chess, Rubik's cube.
+
+\end{document}
