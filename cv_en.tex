@@ -1,200 +1,278 @@
 \documentclass[a4paper,10pt]{article}
 
-%A Few Useful Packages
-\usepackage{marvosym}
-\usepackage{fontspec}                     %for loading fonts
-\usepackage{xunicode,xltxtra,url,parskip} %other packages for formatting
-\RequirePackage{color,graphicx}
-\usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[big]{layaureo}                %better formatting of the A4 page
-% an alternative to Layaureo can be ** \usepackage{fullpage} **
-\usepackage{supertabular}                 %for Grades
-\usepackage{titlesec}                     %custom \section
+%--------------------------- PACKAGES ---------------------------
+\usepackage{fontspec}                     % For loading fonts (requires XeLaTeX or LuaLaTeX)
+\usepackage{geometry}                     % For page layout
+\usepackage{graphicx}                     % For including images
+\usepackage{color, xcolor}                % For color definitions
+\usepackage{hyperref}                     % For hyperlinks
+\usepackage{titlesec}                     % For customizing section titles
+\usepackage{enumitem}                     % For customizing lists
 
-%Setup hyperref package, and colours for links
-\usepackage{hyperref}
-\definecolor{linkcolour}{rgb}{0,0.2,0.6}
-\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+%------------------------- PAGE LAYOUT -------------------------
+\geometry{
+    left=2.5cm,
+    right=2.5cm,
+    top=2.5cm,
+    bottom=2.5cm
+}
 
-%FONTS
-\defaultfontfeatures{Mapping=tex-text}
+%--------------------------- COLORS ----------------------------
+\definecolor{linkcolour}{RGB}{0,51,153}
+
+%-------------------------- HYPERREF ---------------------------
+\hypersetup{
+    colorlinks=true,
+    linkcolor=linkcolour,
+    urlcolor=linkcolour,
+    breaklinks=true
+}
+
+%-------------------------- FONTS ------------------------------
 \setmainfont[
-SmallCapsFont = Fontin-SmallCaps.otf,
-BoldFont = Fontin-Bold.otf,
-ItalicFont = Fontin-Italic.otf
-]
-{Fontin.otf}
-%%%
+    SmallCapsFont = Fontin-SmallCaps.otf,
+    BoldFont = Fontin-Bold.otf,
+    ItalicFont = Fontin-Italic.otf
+]{Fontin.otf}
 
-%CV Sections inspired by:
-\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{3pt}{3pt}
+%----------------------- SECTION FORMATTING ---------------------
+\titleformat{\section}{
+    \Large\scshape\raggedright
+}{}{
+    0em
+}{}
+[\titlerule] % Adds a horizontal line after the section title
 
-%\hyphenation{im-pre-se}
+\titlespacing{\section}{0pt}{1.5ex}{0.5ex}
 
-%--------------------------------BEGIN DOCUMENT---------------------------------
-
+%------------------------ DOCUMENT BEGIN -------------------------
 \begin{document}
 
-\pagestyle{empty} % non-numbered pages
+\pagestyle{empty} % Remove page numbers
 
-\font\fb=''[cmr10]'' %for use with \LaTeX command
+%--------------------------- TITLE ------------------------------
+\begin{center}
+    {\Huge \textsc{Eduardo Almeida dos Santos}}\\
+    \vspace{0.2cm}
+\end{center}
 
-%------------------------------------TITLE--------------------------------------
-
-\par
-{\centering
-    {\Huge \textsc{Eduardo Almeida dos Santos}
-}\bigskip\par}
-
-%-----------------------------------SECTIONS------------------------------------
-
-%Section: Personal Data
-\section{Contact Information}
-
-\begin{tabular}{rl}
-    %\textsc{Date of birth:}
-    %& 13/02/1988 \\
-
-    %\textsc{Address:}
-    %& Rua Cascavel 3161, Bloco Lemans, Apt. 13, Curitiba-PR, Brasil \\
-
-    \textsc{Phone:}
-    & +55 41 99960-3141 \\
-
-    \textsc{email:}
-    & \href{mailto:durdo.one@gmail.com}{durdo.one@gmail.com}
+%--------------------- CONTACT INFORMATION ----------------------
+\section*{Contact Information}
+\begin{tabular}{@{} rl @{}}
+    \textsc{Phone:}   & +55 41 99960-3141 \\
+    \textsc{Email:}   & \href{mailto:durdo@pm.me}{durdo@pm.me} \\
+    \textsc{Profile:} & \href{https://www.linkedin.com/in/durdo/}{LinkedIn} \\
 \end{tabular}
 
-%-------------------------------------------------------------------------------
+%------------------- PROFESSIONAL SUMMARY ---------------------
+\section*{Professional Summary}
+    Experienced Software Engineer with a demonstrated history in the software industry. Passionate about solving complex problems and delivering effective solutions in challenging environments. Adept at developing innovative strategies to enhance system performance and reliability.
 
-\section{Professional Summary}
-    Skilled Software Developer and problem solver with a zest for a challenging
-    work environment and eager to expand my knowledge in the technologic field.
-    Highly flexible in adjusting work pace to meet evolving client needs and
-    capable of working closer to clients to provide technical support.
+%--------------------- WORK EXPERIENCE -------------------------
+\section*{Work Experience}
+    \begin{tabular}{@{} p{2.8cm} | p{12.2cm} @{}}
+        \emph{Sep 2024 - Present}
+        &\textbf{Cloud Engineer} at \textsc
+        {Encora Incorporated} \\
 
-%-------------------------------------------------------------------------------
-
-\section{Work Experience}
-    \begin{tabular}{r|p{11cm}}
-        \emph{Current}               & Development Analyst at \textsc
-                                     {Unify Enterprise Communications},
-                                     Curitiba \\
-
-        \textsc{September 2015}      &\emph
-                                     {Integrated communications solutions} \\
-                                     &\footnotesize
-                                     {
-                                         Serves as a key member of software
-                                         development in the SBC team. Provides
-                                         specification, documentation,
-                                         implementation, and maintenance of
-                                         solutions for telecommunication (VOIP)
-                                         products. Maintainer of the RTPProxy
-                                         component which is responsible for
-                                         media establishment, stream security,
-                                         quality of service, among other
-                                         functionalities. Experienced in network
-                                         traffic analysis and capable of
-                                         providing solutions for any problem
-                                         that might occur. Mostly working with
-                                         backend but also a regular contributor
-                                         to the frontend applications.
-                                     } \\
-                                     \multicolumn{2}{c}{} \\
-
-        \emph{\textsc{July 2015}}    & Intern/technical specialist at \textsc
-                                     {Agres Sistemas Eletrônicos Ltda},
-                                     Curitiba \\
-
-        \textsc{January 2014}        &\emph
-                                     {Automation of farm machinery} \\
-                                     &\footnotesize
-                                     {
-                                         Worked in the company's core product
-                                         providing bug fixes, feature
-                                         development, and writing device drivers
-                                         to embedded systems. Studied the
-                                         possibility to port the product from a
-                                         real-time operating system running in
-                                         an ARM Cortex-M3 to a Linux/Android OS
-                                         in a hardware based on the iMx53
-                                         development kit. Plus, started
-                                         developing the stack ISOBUS (ISO11783).
-                                     } \\
-                                     \multicolumn{2}{c}{} \\
-
-        \emph{\textsc{January 2012}} & Intern at \textsc
-                                     {IBL Innovative Berlin Laser GmbH},
-                                     Berlin \\
-
-        \textsc{August 2011}         &\emph
-                                     {Solid-state laser for industrial
-                                        and scientific applications} \\
-                                     &\footnotesize
-                                     {
-                                         Developed applications to test, control
-                                         and collect data from industrial laser
-                                         machines. Using high-level languages
-                                         (C\#, LabView) developed software that
-                                         automated tests and generated diagnosis
-                                         of Laser machines in the company's lab.
-                                     } \\
-                                     \multicolumn{2}{c}{} \\
+        &\emph
+        {Remote} \\ \\
+        &\normalsize
+        {
+            Focused on security automation in distributed environments,
+            sometimes scaling up to 2000+ nodes. Utilizing Python,
+            Kubernetes, and Ansible to address critical infrastructure
+            and security challenges.
+        } \\
+        \multicolumn{2}{c}{} \\
     \end{tabular}
 
-%-------------------------------------------------------------------------------
+    \begin{tabular}{@{} p{2.8cm} | p{12.2cm} @{}}
+        \emph{Sep 2021 - Aug 2024}
+        &\textbf{Senior Software Engineer} at \textsc
+        {Encora Incorporated} \\
 
-%Section: Education
-\section{Education}
+        &\emph
+        {Remote} \\ \\
+        &\normalsize
+        {
+            Sole maintainer of the telephony stack (Kamailio, Kazoo,
+            FreeSWITCH) for a SaaS platform integrating CRM and telephony
+            services, ensuring the system's stability and performance while
+            contributing to the entire architecture.
+        } \\
+        & \begin{itemize}[leftmargin=*]
+            \item Maintained and optimized the telephony infrastructure,
+                resolving complex issues and implementing critical
+                features like ACD queue scheduling.
+
+            \item Automated the deployment process for local development,
+                simplifying the setup of over 15 Docker containers,
+                significantly reducing onboarding time and complexity
+                for new developers.
+
+            \item Contributed significantly to the design, definition,
+                and implementation of the REST API (telephony and beyond),
+                ensuring scalability.
+
+            \item Helped improve overall system security, enhancing
+                protection against vulnerabilities.
+        \end{itemize} \\
+        \multicolumn{2}{c}{}
+    \end{tabular}
+
+    \begin{tabular}{@{} p{2.8cm} | p{12.2cm} @{}}
+        \emph{Jun 2019 - Aug 2021}
+        &\textbf{Software Engineer} at \textsc
+        {Pumatronix Equipamentos Eletrônicos Ltda} \\
+
+        &\emph
+        {Curitiba, Brasil} \\ \\
+        &\normalsize
+        {
+            Contributed to software solutions integrating cameras,
+            databases, and urban monitoring systems.
+        } \\
+        & \begin{itemize}[leftmargin=*]
+            \item Developed the React front-end and Node.js backend for
+                configuring a new camera product via a web interface
+                stored on it.
+
+            \item Created a plugin system enabling users to deploy Docker
+                containers on the camera, with externalized configuration
+                options for mounts and networking. Developed plugin examples
+                using Python and C++ to interface containers with camera
+                sensors and image processing capabilities.
+
+        \end{itemize} \\
+        \multicolumn{2}{c}{}
+    \end{tabular}
+
+    \begin{tabular}{@{} p{2.8cm} | p{12.2cm} @{}}
+        \emph{Sep 2015 - Jun 2019}
+        &\textbf{Software Engineer} at \textsc
+        {Unify Enterprise Communications} \\
+
+        &\emph
+        {Curitiba, Brasil} \\ \\
+        &\normalsize
+        {
+            As a key backend developer on the Session Border Controller
+            (SBC) team, I was responsible for designing, implementing,
+            and maintaining critical telecommunication solutions.
+        } \\
+        & \begin{itemize}[leftmargin=*]
+            \item Led the development of a Direct Media solution, allowing
+                softphones to establish the shortest media path
+                during calls by utilizing WebRTC.
+
+            \item Sole maintainer of the internal fork of RTPProxy, a core
+                component responsible for managing media streams.
+
+            \item Actively engaged in analyzing network traffic, diagnosing
+                and solving complex issues related to VOIP performance.
+        \end{itemize} \\
+        &\normalsize
+        {
+            Though my primary focus was backend, I contributed to solving
+            system-wide problems, collaborating across teams to deliver
+            robust telecommunication services.
+        } \\
+
+        \multicolumn{2}{c}{}
+    \end{tabular}
+
+    \begin{tabular}{@{} p{2.8cm} | p{12.2cm} @{}}
+        \emph{Jan 2014 - Jul 2015}
+        &\textbf{Firmware Engineer} at \textsc
+        {Agres Sistemas Eletrônicos Ltda} \\
+
+        &\emph
+        {Curitiba, Brasil} \\ \\
+        &\normalsize
+        {
+            Worked as a firmware developer for a product that integrates
+            with heavy agricultural machinery, enabling autopilot and
+            reporting functionality.
+        } \\
+        & \begin{itemize}[leftmargin=*]
+            \item Developed drivers to interface with various hardware
+            components, including sensors and weighing systems, ensuring
+            seamless data collection and system integration.
+
+            \item Focused on optimizing firmware for real-time performance
+            and reliability in harsh environmental conditions.
+
+        \end{itemize} \\
+        \multicolumn{2}{c}{}
+    \end{tabular}
+
+%------------------------- EDUCATION ---------------------------
+\section*{Education}
     \begin{tabular}{rl}
-        \textsc{April} 2015 & Bachelor's Degree in: \\
+        \textsc{April 2015:}  & Bachelor's Degree in: \\
                             &\textsc
                             {Electrical Engineering -
                                 Electronics and Telecommunication}, \\
 
                             &\textbf
-                            {Universidade Tecnológica
-                                Federal do Paraná},
-                            Curitiba \\
+                            {Universidade Tecnológica Federal do Paraná},
+                            Curitiba, Paraná, Brasil \\
 
-        \textsc{2011}       & Exchange Year at \textbf
+        \textsc{2011:}       & Exchange Year at \textbf
                             {Beuth Hochschule für Technik Berlin},
-                            Berlin \\ \\
+                            Berlin, Germany \\
     \end{tabular}
 
-%-------------------------------------------------------------------------------
+%------------------------ LANGUAGES ----------------------------
+\section*{Languages}
+\begin{tabular}{@{} r p{10cm} @{}}
+    \textsc{Portuguese:} & Native \\
+    \textsc{English:}    & Fluent
+\end{tabular}
 
-%Section: Languages
-\section{Languages}
-    \begin{tabular}{rl}
-        \textsc{Portuguese:} &Native\\
-        \textsc{English:}    &Fluent\\
-        \textsc{German:}     &Basic\\
-    \end{tabular}
+%-------------------------- SKILLS ------------------------------
+\section*{Skills}
+\begin{tabular}{@{} r p{10cm} @{}}
+    \textsc{Basic Knowledge:} &
+    PHP,
+    CSS,
+    HTML,
+    Java,
+    Perl,
+    C\#,
+    Assembly,
+    VBA,
+    Automotive Communication Protocols (ISOBUS, CANopen, EtherCAT),
+    \LaTeX \\
 
-\section{Skills}
-    \begin{tabular}{rp{9cm}}
-        Basic Knowledge:        & \textsc {PHP, Javascript, CSS, HTML, Java,
-                                pearl, C\#, assembly, VBA, automotive communication
-                                protocols (ISOBUS, CanOpen, EtherCAT), Android
-                                OS,} {\fb \LaTeX}\setmainfont
-                                [SmallCapsFont=Fontin-SmallCaps.otf]
-                                {Fontin.otf}. \\ \\
+    \textsc{Intermediate Knowledge:} &
+    Shell Scripting,
+    Erlang,
+    MATLAB,
+    LabView,
+    Various Internet Protocols,
+    Network Programming \\
 
-        Intermediate Knowledge: & \textsc{Microsoft Office, Shell script, Python,
-                                MatLab, LabView, various internet protocols,
-                                network programming.} \\ \\
+    \textsc{Advanced Knowledge:} &
+    Agile Methodologies,
+    GNU/Linux,
+    Git,
+    JavaScript,
+    C,
+    C++,
+    Python,
+    Coputer Networking,
+    WebRTC \\
 
-        Advanced Knowledge:     & \textsc{GNU/Linux, Agile, C, C++, git,
-                                networking, network media establishment (SIP,
-                                SDP, ICE, STUN, RTP, RTCP).}
-    \end{tabular}
+\end{tabular}
 
-\section{Interests and Activities}
+%------------------ INTERESTS AND ACTIVITIES -------------------
+\section*{Interests and Activities}
+\begin{tabular}{@{} ll @{}}
     GNU/Linux, Vim, Technology, Open-Source, Programming; \\
-    Artificial intelligence, Data structures, Algorithms, Optimizations; \\
-    Chess, Rubik's cube.
+    Artificial Intelligence, Data Structures, Algorithms, Optimizations; \\
+    Chess, Rubik's Cube.
+\end{tabular}
 
 \end{document}
